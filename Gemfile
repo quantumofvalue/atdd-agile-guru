@@ -27,8 +27,12 @@ group :development, :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'capybara'
-  gem 'capybara-webkit'
+  # Headless testing, but only on Mac OS X and Linux.
+  # A HINT: change your life: use good operating systems :).
+  #gem 'capybara-webkit'
   gem 'selenium-client'
+  # for save_and _open_page from capybara - but it does not look like it works on Windows...
+  gem 'launchy'
 end
 
 # To use ActiveModel has_secure_password

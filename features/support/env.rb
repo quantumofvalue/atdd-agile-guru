@@ -11,6 +11,7 @@ require 'cucumber/rails'
 # prefer to use XPath just remove this line and adjust any selectors in your
 # steps to use the XPath syntax.
 Capybara.default_selector = :css
+Capybara.run_server = true
 
 # By default, any exception happening in your Rails application will bubble up
 # to Cucumber so that your scenario will fail. This is a different from how 
@@ -35,6 +36,11 @@ begin
   DatabaseCleaner.strategy = :transaction
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
+end
+
+Before('@javascript,@selenium') do
+  DatabaseCleaner.strategy = :truncation
+  Cucumber::Rails::World.use_transactional_fixtures = false
 end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
