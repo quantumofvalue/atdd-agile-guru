@@ -14,18 +14,17 @@ Then /^I should see "(.*?)" and "(.*?)" listed on the page\.$/ do |item1, item2|
   page.should have_content(item2)
 end
 
-Given /^I visit the "(.*?)" page$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-When /^I enter "(.*?)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+When /^I enter "(.*?)"$/ do |itemText|
+    @item_text = itemText
+    within("form") do
+        fill_in('item_text', :with => 'itemText')
+    end
 end
 
 When /^click "(.*?)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+    click_button("Save")
 end
 
 Then /^I should see the added new item on the page\.$/ do
-  pending # express the regexp above with the code you wish you had
+    page.should have_content(@itemText)
 end

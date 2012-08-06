@@ -28,6 +28,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'webrat'
   # Headless testing, but only on Mac OS X and Linux.
   # A HINT: change your life: use good operating systems :).
   #gem 'capybara-webkit'
