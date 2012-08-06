@@ -14,10 +14,10 @@ Then /^I should see "(.*?)" and "(.*?)" listed on the page\.$/ do |item1, item2|
   page.should have_content(item2)
 end
 
-When /^I enter "(.*?)"$/ do |itemText|
+When /^I enter "(.*?)" in "(.*?)"$/ do |itemText,controlName|
     @item_text = itemText
     within("form") do
-        fill_in('item_text', :with => 'itemText')
+        fill_in(controlName, :with => 'itemText')
     end
 end
 
