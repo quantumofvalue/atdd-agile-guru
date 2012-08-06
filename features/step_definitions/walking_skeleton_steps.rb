@@ -1,15 +1,17 @@
 # encoding: utf-8
 
-Given /^items "(.*?)" and "(.*?)" in the database$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+Given /^items "(.*?)" and "(.*?)" in the database$/ do |item1, item2|
+  FactoryGirl.create(:item, text: item1)
+  FactoryGirl.create(:item, text: item2)
 end
 
-When /^I open "(.*?)" page$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+When /^I open "(.*?)" page$/ do |url|
+  visit("/#{url}")
 end
 
-Then /^I should see "(.*?)" and "(.*?)" listed on the page\.$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+Then /^I should see "(.*?)" and "(.*?)" listed on the page\.$/ do |item1, item2|
+  page.should have_content(item1)
+  page.should have_content(item2)
 end
 
 Given /^I visit the "(.*?)" page$/ do |arg1|
