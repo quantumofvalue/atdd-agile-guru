@@ -1,6 +1,7 @@
 AtddAgileGuru::Application.routes.draw do
     resources :items
     resources :questions
+    resources :answers
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

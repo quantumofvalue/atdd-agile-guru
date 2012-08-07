@@ -17,12 +17,12 @@ end
 When /^I enter "(.*?)" in "(.*?)"$/ do |itemText,controlName|
     @item_text = itemText
     within("form") do
-        fill_in(controlName, :with => 'itemText')
+        fill_in(controlName, :with => itemText)
     end
 end
 
-When /^click "(.*?)"$/ do |arg1|
-    click_button("Save")
+When /^click "(.*?)"$/ do |buttonName|
+    click_button(buttonName)
 end
 
 Then /^I should see the added new item on the page\.$/ do

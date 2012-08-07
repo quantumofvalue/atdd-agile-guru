@@ -1,3 +1,8 @@
 <% for question in @questions %>
-<p><%= question.contents  %></p>
+<div class="question">
+<p><%= question.contents %>&nbsp;<%= link_to "Answer",new_answer_path(:question_id => question.id) %></p>
+<% for answer in question.answers %>
+<p class="answer"><%= answer.text %></p>
+<% end %>
+</div>
 <% end %>

@@ -11,5 +11,5 @@ Scenario: Retrieving all posted questions
 Scenario: Writing new questions
     Given I open "questions/new" page
     When I enter "Question" in "question_contents"
-    And click "Submit"
+    And click "Save"
     Then I should see the added new item on the page.

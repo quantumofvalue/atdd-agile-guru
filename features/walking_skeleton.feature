@@ -11,5 +11,5 @@ Scenario: Retrieving items from the database
 Scenario: Adding text items to database.
     Given I open "items/new" page
     When I enter "Test Item" in "item_text"
-    And click "Submit"
+    And click "Save"
     Then I should see the added new item on the page.
