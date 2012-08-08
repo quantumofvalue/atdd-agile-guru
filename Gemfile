@@ -23,6 +23,8 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'libv8', '~> 3.11.8'
+  gem 'therubyracer', '>= 0.11.0beta1', :require => 'v8'
   gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
   gem 'factory_girl_rails'
